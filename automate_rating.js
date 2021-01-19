@@ -18,3 +18,7 @@ for(let j = 0; j < 15;j++){
 document.getElementById(`ContentPlaceHolder1_UcCourseEval1_GrdViewcourseEval_Rating1_${j}_Star_${star}`).dispatchEvent(event);
 }
 }
+
+$('#target').on('click mouseover', function () {
+    // Do something for both
+});
