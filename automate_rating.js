@@ -70,13 +70,13 @@ class Automate{
 }
 
 
-function main(rate){
+function main(instructor_rating, lab_rating, overall_rating){
   auto = new Automate()
-  auto.instructor_rating(rate)
-  auto.lab_rating(rate)
-  auto.overall_rating(rate)
+  auto.instructor_rating(instructor_rating)
+  auto.lab_rating(lab_rating)
+  auto.overall_rating(overall_rating)
 }
-main(5)
+main(5, 4, 3)
 
 // Structure
 // =========
