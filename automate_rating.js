@@ -28,8 +28,8 @@ class Automate{
         hidden_id: "ContentPlaceHolder1_UcCourseEval1_GrdViewcourseEval_Rating1_RatingExtender_ClientState_${criteria}"
       }
     }
-    if(!this.course.lab.check_instructors)
-    this.course.lab = parseInt(document.getElementById("ContentPlaceHolder1_UcCourseEval1_DataListLapEval").rows.length)
+    if(! this.course.lab.check_instructors)
+		this.course.lab.instructors = parseInt(document.getElementById("ContentPlaceHolder1_UcCourseEval1_DataListLapEval").rows.length)
   }
   instructor_rating(value, overallStars=5){
       let lecture = this.course.lecture
@@ -48,10 +48,11 @@ class Automate{
       for(let criteria = 0; criteria< lab.criteria_num; criteria++){
         let id = lab.hidden_id.replace("${instructor}", instructor)
         id = id.replace("${criteria}", criteria)
+		console.log(id);
         document.getElementById(id).setAttribute("value", value);
-        let stars_id = lecture.stars_id.replace("${criteria}", criteria)
-        stars_id = stars_id.replace("${star}", value)
-        document.getElementById(stars_id).dispatchEvent(event);
+        //let stars_id = lab.stars_id.replace("${criteria}", criteria)
+        //stars_id = stars_id.replace("${star}", value)
+        //document.getElementById(stars_id).dispatchEvent(event);
       }
     }
   }
